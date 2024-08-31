@@ -1,0 +1,12 @@
+.upload {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-weight: bold;
+    }
+
+    .description {
+        width: 100%;
+    }
+}
