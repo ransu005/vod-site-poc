@@ -1,0 +1,10 @@
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .tab {
+        font-weight: bold;
+        margin-left: 20px;
+    }
+}
