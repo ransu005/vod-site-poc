@@ -1,13 +1,15 @@
 <div class="home">
     <ul class="vod-thumbnails-container">
-        @for (item of [].constructor(5); track $index) 
-        {
+        @for (vid of videos; track vid.id) {
             <li class=vod-thumbnails-card>
-                <div class="vod-thumbnails" routerLink="/stream/{{$index}}"></div>
+                <div class="vod-thumbnails"
+                    routerLink="/stream/{{vid.id}}" >
+                    <span class="tooltiptext">{{vid.title}}</span>
+                </div>
                 <div class="details">
-                    <h1>Title</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
-                    <b>Category:</b>
+                    <h1>{{vid.title}}</h1>
+                    <p>{{vid.description}}</p>
+                    <b>Category: </b>{{vid.category}}
                 </div>
             </li>
         }
