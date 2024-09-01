@@ -1,0 +1,28 @@
+@import '../../../styles.scss';
+
+.navigation {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color: $primaryColor;
+    color: $tertiaryColor;
+    font-family: sans-serif;
+
+    .tab {
+        font-weight: bold;
+        margin: 20px;
+        background-color: $primaryColor;
+        align-self: center;
+        border: 1px solid $tertiaryColor;
+        border-radius: 25px;
+        text-align: center;
+        align-content: center;
+        height: 30px;
+        width: 130px;
+
+        &:hover {
+            background-color: $secondaryColor;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import '../styles.scss';
+
+.banner {
+    display: flex;
+    align-items: center;
+    background-color: $primaryColor;
+    color: $tertiaryColor;
+    justify-content: space-between;
+    padding: 20px;
+}
