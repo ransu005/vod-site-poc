@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.stream {
+    font-family: $fontFamily;
+    display: flex;
+    padding: 10px;
+    
+    .video {
+        min-width: 640px;
+        height: 480px;
+        border: solid 1px grey;
+    }
+
+    .details {
+        padding: 10px;
+    }
+}
