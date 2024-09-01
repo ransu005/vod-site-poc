@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationComponent } from "../navigation/navigation.component";
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { VideosService } from '../../services/videos.service';\
+import { VideosService } from '../../services/videos.service';
 
 @Component({
   selector: 'app-home',
