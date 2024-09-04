@@ -6,7 +6,7 @@ import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/c
 })
 export class NgVideoUploadDirective {
 
-  @Input() maxSize: number = 100000000; // 5MB in bytes
+  @Input() maxSize: number = 104857600; // 100MB in bytes
   @Output() videoUploaded = new EventEmitter<File>();
 
   constructor() { }

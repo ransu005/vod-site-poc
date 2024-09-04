@@ -6,7 +6,7 @@ import { StreamComponent } from './components/stream/stream.component';
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'vod-upload', component: VodUploadComponent },
-    { path: 'stream/:item', component: StreamComponent },
+    { path: 'stream/:videoId', component: StreamComponent },
     { path: '',   redirectTo: '/home', pathMatch: 'full' },
     { path: '**',   redirectTo: '/home', pathMatch: 'full' },
 ];

@@ -20,9 +20,9 @@
             padding: 10px;
 
             .vod-thumbnails {
-                background-color: grey;
                 aspect-ratio: 1 / 1;
                 height: 256px;
+                object-fit: cover;
 
                 &:hover {
                     cursor: pointer;
@@ -42,7 +42,6 @@
                     padding: 5px 0;
                     font-family: $fontFamily;
                   
-                    /* Position the tooltip */
                     position: absolute;
                     z-index: 1;
                   }

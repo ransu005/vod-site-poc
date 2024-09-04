@@ -1,8 +1,12 @@
 <div class="stream">
-    <div class="video"></div>
+    @if (vid) {
+        <video controls class="video">
+            <source src={{vid?.src}} type={{vid?.type}}>
+        </video>
+    }
     <div class="details">
-        <h1 class="title">Title</h1>
-        <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
-        <b class="category">Category:</b>
+        <h1 class="title">{{vid?.title}}</h1>
+        <p class="description">{{vid?.description}}</p>
+        <b class="category">Category: </b>{{vid?.category}}
     </div>
 </div>

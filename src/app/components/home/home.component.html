@@ -2,10 +2,11 @@
     <ul class="vod-thumbnails-container">
         @for (vid of videos; track vid.id) {
             <li class=vod-thumbnails-card>
-                <div class="vod-thumbnails"
-                    routerLink="/stream/{{vid.id}}" >
+                <video class="vod-thumbnails"
+                    routerLink="/stream/{{vid.id}}"
+                    src={{vid.src}} >
                     <span class="tooltiptext">{{vid.title}}</span>
-                </div>
+                </video>
                 <div class="details">
                     <h1>{{vid.title}}</h1>
                     <p>{{vid.description}}</p>
