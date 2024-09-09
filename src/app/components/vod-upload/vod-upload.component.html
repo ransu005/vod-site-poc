@@ -1,14 +1,19 @@
 <form class="upload">
     <label for="title">Title</label>
-    <input type="text" name="title" id="title">
+    <input type="text" name="title" id="title" [(ngModel)]="video.title" required>
 
     <label for="description">Description</label>
     <textarea name="description" cols="32" rows="5"
     matInput matTextareaAutosize matAutosizeMinRows=1
-    matAutosizeMaxRows=5></textarea>
+    matAutosizeMaxRows=5 [(ngModel)]="video.description"></textarea>
 
     <label for="category">Category</label>
-    <input type="text" name="category" id="category">
+    <select id="category" [(ngModel)]="video.category"
+        *ngIf="videoService.categories$ | async as categories">
+        @for(category of categories; track category.id) {
+            <option value="{{category.name}}">category.name</option>
+        }
+    </select>
 
     <label for="vod">
         <i class="ph ph-upload"></i>
@@ -18,5 +23,6 @@
             your videos
         </span>
     </label>
-    <input id="vod" type="file" name="vod" accept=".mov, .mp4, .avi" ngVideoUpload />
+    <input id="vod" type="file" name="vod" accept=".mov, .mp4, .avi"
+        [(ngModel)]="video.file" (submit)="uploadVideo()" ngVideoUpload />
 </form>

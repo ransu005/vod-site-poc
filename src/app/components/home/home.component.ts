@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationComponent } from "../navigation/navigation.component";
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { VideosService } from '../../services/videos.service';
@@ -12,16 +12,19 @@ import { VideosService } from '../../services/videos.service';
     NavigationComponent,],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  styles: [`:host {display: block;}`]
+  // styles: [`:host {display: block;}`]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   videos: any;
+  videosService;
 
   constructor(videosService: VideosService) {
-    videosService.getVideos().subscribe(vid => {
-        this.videos = vid
-      }
-    );
+    this.videosService = videosService;
+  }
+
+  ngOnInit(): void {
+    this.videosService.getVideos().subscribe(vid => {
+      this.videos = vid
+    });
   }
 }
-

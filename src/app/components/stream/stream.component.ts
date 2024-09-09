@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { VideosService } from '../../services/videos.service';
 
@@ -9,17 +9,21 @@ import { VideosService } from '../../services/videos.service';
   templateUrl: './stream.component.html',
   styleUrl: './stream.component.scss'
 })
-export class StreamComponent {
+export class StreamComponent implements OnInit {
 
   videosService: any;
   vid: any;
+  id: number | undefined;
 
   @Input()
   set videoId(videoId: number) {
-    this.vid = this.videosService.getVideoById(videoId)[0];
+    this.id = videoId;
   }
 
   constructor(videosService: VideosService) {
     this.videosService = videosService;
+  }
+  ngOnInit(): void {
+    this.vid = this.videosService.getVideoById(this.id)[0];
   }
 }
